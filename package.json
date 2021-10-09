@@ -1,0 +1,12 @@
+{
+  "name": "github-organizations",
+  "version": "1.0.0",
+  "description": "React app that consumes GitHub organizations API data",
+  "main": "index.js",
+  "scripts": {
+    "start-server": "nodemon",
+    "start-react": "cd ui && npm start"
+  },
+  "author": "Stephen Chapman",
+  "license": "ISC"
+}
