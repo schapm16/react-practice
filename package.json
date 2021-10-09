@@ -8,5 +8,8 @@
     "start-react": "cd ui && npm start"
   },
   "author": "Stephen Chapman",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
