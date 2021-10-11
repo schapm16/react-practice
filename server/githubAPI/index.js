@@ -6,16 +6,13 @@ axios.defaults.headers = {
   'accept': 'application/vnd.github.v3+json',
 }
 
-function getOrganizations(config = {}) {
-  let { 
-    search = {
-      since: 1000,
-      per_page: 10,
-    },
-    path = '/organizations',
-  }  = config;
+function getOrganizations(query = {}) {
+  const search = {
+    per_page: 10,
+    since: parseInt(query.lastId, 10) + 1 || 1000,
+  }
 
-  const endpoint = setEndpoint(path, search);
+  const endpoint = setEndpoint('/organizations', search);
 
   return axios.get(endpoint)
     .then(response => response.data)
