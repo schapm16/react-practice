@@ -88,6 +88,18 @@
   font-weight: bold;
 }
 
+.description p {
+  display: inline;
+}
+
+.description p::before{
+  content: '';
+  display: inline;
+  height: 100%;
+  border-left: 2px solid #be00fe;
+  margin-right: 15px;
+}
+
 @media screen and (min-width: 460px) {
   .card-list .card {
     width: 30%;
