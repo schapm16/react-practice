@@ -1,5 +1,5 @@
-import CardList from './CardList';
+import RecursiveCardList from './RecursiveCardList';
 
 export {
-  CardList,
+  RecursiveCardList,
 }
