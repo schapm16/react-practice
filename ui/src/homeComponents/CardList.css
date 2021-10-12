@@ -1,4 +1,5 @@
 .card-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -9,7 +10,17 @@
  .card-list {
    flex-direction: row;
    margin: 0 auto;
+   padding: 10px 0 10px 0;
    max-width: 90%;
+ }
+
+ .card-list:nth-child(n+2)::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  border-top: 4px double #4169e1;
  }
 }
 
