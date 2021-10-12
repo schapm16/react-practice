@@ -29,7 +29,7 @@ function SingleCardList({ data }) {
                 </tbody>
               </table>
               <div className="description">
-                <p>{description}</p>
+                {(description) ? <p>{description}</p> : null}
               </div>
             </div>
           </li>
