@@ -12,11 +12,22 @@ function SingleCardList({ data }) {
               <h2 className="card-title">{login}</h2>
             </div>
             <div className="card-body">
-              <div className="stat-container">
-                <p className="stat">Followers: <span className="stat--bold">{followers}</span></p>
-                <p className="stat">Public Repos: <span className="stat--bold">{public_repos}</span></p>
-                <p className="stat">Public Gists: <span className="stat--bold">{public_gists}</span></p>
-              </div>
+              <table className="stat-table">
+                <tbody className="stat-table-body">
+                  <tr className="stat-row">
+                    <th className="stat">Followers:</th>
+                    <td className="stat stat--bold">{followers}</td>
+                  </tr>
+                  <tr className="stat-row">
+                    <th className="stat">Public Repos:</th>
+                    <td className="stat stat--bold">{public_repos}</td>
+                  </tr>
+                  <tr className="stat-row">
+                    <th className="stat">Public Gists:</th>
+                    <td className="stat stat--bold">{public_gists}</td>
+                  </tr>
+                </tbody>
+              </table>
               <div className="description">
                 <p>{description}</p>
               </div>
