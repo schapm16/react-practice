@@ -1,7 +1,7 @@
 import React from 'react';
 import './CardList.css';
 
-export default function CardList({ data }) {
+function SingleCardList({ data }) {
   return (
     <ul className="card-list">
       {data.map(({avatar_url, description, id, login}) => {
@@ -18,5 +18,17 @@ export default function CardList({ data }) {
         )
       })}
     </ul>
+  )
+}
+ 
+export default function CardList({ data }) {
+  data = [...data];
+  const dataForThisIteration = data.splice(0, 10);
+
+  return (
+    <>
+      <SingleCardList data={dataForThisIteration}/>
+      {(data.length) ? <CardList data={data}/> : null}
+    </>
   )
 }
