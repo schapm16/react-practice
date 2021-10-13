@@ -20,9 +20,3 @@
   color: white;
   background: #4169e1;
 }
-
-@media screen and (min-width: 460px) {
-  .home #showMoreButton {
-    /* margin-left: calc(5% + 15px); */
-  }
-}
