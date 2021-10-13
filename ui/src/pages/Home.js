@@ -23,7 +23,12 @@ export default function Home() {
   return (
     <section className="home">
       <RecursiveCardList data={[...organizations]}/>
-      <button id="showMoreButton" onClick={showMoreHandler}>Show More</button>
+      <button 
+        id="showMoreButton"
+        tabIndex="0"
+        aria-label="Show more organizations"
+        onClick={showMoreHandler}>Show More
+      </button>
     </section>
   )
 }

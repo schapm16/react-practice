@@ -15,8 +15,12 @@
   transition: color 0.25s;
 }
 
-.home #showMoreButton:hover {
-  cursor: pointer;
+.home #showMoreButton:hover,
+.home #showMoreButton:focus {
   color: white;
   background: #4169e1;
+}
+
+.home #showMoreButton:hover {
+  cursor: pointer;
 }
