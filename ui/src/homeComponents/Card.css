@@ -1,13 +1,16 @@
+/* If Card is used inside .card-list */
+.card-list .card {
+  height: 100%;
+}
+/*  */
+
 /* Card */
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
 
   box-shadow: 5px 5px 5px #eee;
   border: 1px solid #bcbcbc;
 
-  margin: 15px 0 15px 0;
   padding: 15px;
 
   top: 0;
@@ -75,9 +78,6 @@
 
 @media screen and (min-width: 460px) {
   .card {
-    width: 30%;
-    min-width: 250px;
-    margin: 15px;
     transition: top 0.2s, left 0.2s, box-shadow 0.2s;
   }
 
