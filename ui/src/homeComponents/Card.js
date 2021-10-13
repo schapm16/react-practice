@@ -1,11 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 export default function Card({ context }) {
   const { 
     avatar_url,
     description,
-    id, 
     login, 
     url_data: {
       followers,
@@ -41,6 +41,11 @@ export default function Card({ context }) {
           {(description) ? <p>{description}</p> : null}
         </div>
       </div>
+      <Link 
+        to={`/organization-detail?org=${login}`}
+        className="createOverlay"
+        aria-label={`Select to see more details about ${login}`}
+      />
     </div>
   )
 }
