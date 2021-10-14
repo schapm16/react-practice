@@ -1,6 +1,18 @@
+.organization-detail-header {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.organization-detail-header-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
 .organization-detail-heading {
   margin-left: 2.5%;
-  margin-right: 5%;
 }
 
 .grid-container {
