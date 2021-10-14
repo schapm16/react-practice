@@ -15,8 +15,9 @@ export default function OrganizationDetail({ location }) {
 
   return (
     <>
-    <header>
-      <h1 className="organization-detail-heading">{`Explore ${organizationDetail.login}...`}</h1>
+    <header className="organization-detail-header">
+      <img className="organization-detail-header-image" src={organizationDetail.avatar_url}/>
+      <h1 className="organization-detail-heading">{`Explore ${organizationDetail.login}`}</h1>
     </header>
     <div className='organization-detail grid-container'>
       <section id="members" className="grid-item">
