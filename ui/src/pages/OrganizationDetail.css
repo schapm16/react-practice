@@ -1,0 +1,74 @@
+.grid-container {
+  max-width: 90%;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 15px 15px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "sidebar"
+  "section1"
+  "section2"
+  
+}
+
+@media screen and (min-width: 460px) {
+  .grid-container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+      "sidebar section1"
+      "sidebar section2"
+  }
+}
+
+/* Members */
+.organization-detail #members {
+  grid-area: sidebar;
+  padding: 0 20px 0 20px;
+  border: 2px solid #00febe;
+  border-radius: 5px;
+
+}
+
+#members .member-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.member-container .createOverlay {
+  position: absolute;
+  top: 0;
+  right: -4px;
+  bottom: 0;
+  left: -4px;
+}
+
+.member-container .member-link:hover,
+.member-container .member-link:focus {
+  background: rgba(0, 254, 190, 0.1);
+}
+
+.member-container .member-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.member-container .member-name {
+  margin-left: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Repos */
+.organization-detail #repos {
+  grid-area: section1;
+}
+
+.organization-detail #gists {
+  grid-area: section2;
+}
