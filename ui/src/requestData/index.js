@@ -7,6 +7,13 @@ function getOrganizations(organizations = []) {
     .then(response => response.json())
 }
 
+function getOrganizationDetail(org = '') {
+  if (!org) return Promise.resolve({});
+  return fetch(`/api/get-organization-detail?org=${org}`)
+    .then(response => response.json());
+}
+
 export {
   getOrganizations,
+  getOrganizationDetail
 }
