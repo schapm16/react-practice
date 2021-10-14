@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { RecursiveCardList } from '../homeComponents';
 import { getOrganizations } from '../requestData';
+import { dataCache } from '../App';
 
 export default function Home() {
   const [ organizations, setOrganizations ] = useState([]);
@@ -10,13 +11,19 @@ export default function Home() {
     getOrganizations(organizations)
       .then(data => {
         setOrganizations([...organizations, ...data]);
+        dataCache.organizations = [...organizations, ...data];
       })
   }
   
   useEffect(() => {
+    if (dataCache.organizations) {
+      setOrganizations(dataCache.organizations);
+      return;
+    }
     getOrganizations()
       .then(data => {
         setOrganizations(data);
+        dataCache.organizations = data;
       })
   }, [])
     
