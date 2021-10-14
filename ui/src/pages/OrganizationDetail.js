@@ -9,7 +9,7 @@ export default function OrganizationDetail({ location }) {
   useEffect(() => {
     getOrganizationDetail(location.search.replace('?org=', ''))
       .then(data => setOrganizationDetail(data));
-  }, [])
+  }, [location.search])
 
   if (!organizationDetail) return <div></div>;
 
