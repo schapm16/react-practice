@@ -7,7 +7,7 @@ export default function OrganizationDetail({ location }) {
   let [ organizationDetail, setOrganizationDetail ] = useState(null);
 
   useEffect(() => {
-    getOrganizationDetail('railslove')
+    getOrganizationDetail(location.search.replace('?org=', ''))
       .then(data => setOrganizationDetail(data));
   }, [])
 
