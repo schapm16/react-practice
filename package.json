@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "React app that consumes GitHub organizations API data",
   "main": "index.js",
+  "engines": {
+    "node": "^16.0.0"
+  },
   "scripts": {
+    "build": "cd ui && npm install && npm build",
+    "start": "node index.js",
     "start-server": "nodemon",
     "start-react": "cd ui && npm start"
   },

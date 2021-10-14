@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const { apiRouter } = require('./server/routes/');
 
@@ -17,5 +17,5 @@ if (process.env.NODE_ENV === 'production') {
 
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
+  console.log(`App listening at http://localhost:${PORT}`)
 })
