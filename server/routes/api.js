@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getOrganizations } = require('../githubAPI');
+const { getOrganizations, getOrganizationDetail } = require('../githubAPI');
 
 router.get('/get-organizations', (request, response) => {
   const query = {};
