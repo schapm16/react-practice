@@ -14,6 +14,10 @@ export default function OrganizationDetail({ location }) {
   if (!organizationDetail) return <div></div>;
 
   return (
+    <>
+    <header>
+      <h1 className="organization-detail-heading">{`Explore ${organizationDetail.login}...`}</h1>
+    </header>
     <div className='organization-detail grid-container'>
       <section id="members" className="grid-item">
         <h2>Members</h2>
@@ -48,5 +52,6 @@ export default function OrganizationDetail({ location }) {
         })}
       </section>
     </div>
+    </>
   )
 }

@@ -21,6 +21,10 @@ export default function Home() {
   }, [])
     
   return (
+    <>
+    <header>
+      <h1 className="home-heading">Discover GitHub Organizations</h1>
+    </header>
     <section className="home">
       <RecursiveCardList data={[...organizations]}/>
       <button 
@@ -30,5 +34,6 @@ export default function Home() {
         onClick={showMoreHandler}>Show More
       </button>
     </section>
+    </>
   )
 }
