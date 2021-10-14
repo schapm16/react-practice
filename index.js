@@ -7,6 +7,7 @@ const { apiRouter } = require('./server/routes/');
 
 app.use('/api', apiRouter);
 
+// Serves production build when hosted
 if (process.env.NODE_ENV === 'production') {
   const uiRoot = path.join(__dirname, 'ui', 'build');
   app.use(express.static(uiRoot));
@@ -14,7 +15,6 @@ if (process.env.NODE_ENV === 'production') {
     response.sendFile('index.html', {root: uiRoot});
   })
 }
-
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`)
