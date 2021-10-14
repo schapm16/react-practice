@@ -1,3 +1,9 @@
+.home-heading {
+  margin-left: 2.5%;
+  margin-right: 5%;
+  border-bottom: 1px solid #4169e1;
+}
+
 .home #showMoreButton {
   display: block;
   width: 120px;
