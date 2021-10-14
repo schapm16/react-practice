@@ -15,7 +15,6 @@ axios.defaults.headers = {
  */
 function getGeneric(endpoint = '') {
   if (!endpoint) return Promise.resolve({});
-  // endpoint = endpoint.replace(axios.defaults.baseURL, '');
 
   return axios.get(endpoint)
     .then(response => response.data);
@@ -42,20 +41,6 @@ function getOrganizationsList(query = {}) {
 
 
 /**
- * Submits GET to GitHub /orgs/{org}
- *
- * @param {string} organizationUrl
- * @return {Promise<Object>}
- */
-function getOrganizationOrg(organizationUrl) {
-  if (!organizationUrl) return Promise.resolve({});
-
-  return axios.get(organizationUrl)
-    .then(response => response.data)
-}
-
-
-/**
  * Combines GET /organizations and GET /orgs/{org} before returning
  * to client Request
  *
@@ -65,7 +50,7 @@ function getOrganizationOrg(organizationUrl) {
 async function getOrganizations(query = {}) {
   const organizationList = await getOrganizationsList(query);
   const urlDataPromiseArray = organizationList.map(async (organization) => {
-    let urlDataPromise = getOrganizationOrg(organization.url);
+    let urlDataPromise = getGeneric(organization.url);
     organization.url_data = await urlDataPromise;
     return urlDataPromise; 
   })
@@ -83,7 +68,7 @@ async function getOrganizations(query = {}) {
  * @return {Promise<{}>} 
  */
 async function getOrganizationDetail(org = '') {
-  const organization = await getOrganizationOrg(`/orgs/${org}`);
+  const organization = await getGeneric(`/orgs/${org}`);
   const repos_dataPromise = getGeneric(organization.repos_url)
   const members_dataPromise = getGeneric(organization.members_url.replace('{/member}', ''))
 
@@ -98,5 +83,5 @@ async function getOrganizationDetail(org = '') {
 
 module.exports = {
   getOrganizations,
-  getOrganizationDetail
+  getOrganizationDetail,
 }
